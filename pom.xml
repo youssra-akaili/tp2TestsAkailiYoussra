@@ -29,10 +29,19 @@
             <version>1.22.0-beta32</version>
         </dependency>
 
-        <!-- Modèle d'embeddings intégré (test 4) -->
+        <!-- Modèle d'embeddings intégré (test 4).
+             Mis en commentaire pour le test 5 : conflit avec le modèle utilisé par easy-rag.
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-embeddings-bge-small-en-v15</artifactId>
+            <version>1.22.0-beta32</version>
+        </dependency>
+        -->
+
+        <!-- RAG facile (tests 5 et 6) -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-easy-rag</artifactId>
             <version>1.22.0-beta32</version>
         </dependency>
 

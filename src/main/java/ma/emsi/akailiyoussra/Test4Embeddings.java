@@ -2,7 +2,8 @@ package ma.emsi.akailiyoussra;
 
 import dev.langchain4j.data.embedding.Embedding;
 import dev.langchain4j.model.embedding.EmbeddingModel;
-import dev.langchain4j.model.embedding.onnx.bgesmallenv15.BgeSmallEnV15EmbeddingModel;
+// Mis en commentaire pour le test 5 (dépendance du modèle intégré en commentaire dans pom.xml)
+// import dev.langchain4j.model.embedding.onnx.bgesmallenv15.BgeSmallEnV15EmbeddingModel;
 import dev.langchain4j.model.google.genai.GoogleGenAiEmbeddingModel;
 import dev.langchain4j.store.embedding.CosineSimilarity;
 
@@ -35,9 +36,11 @@ public class Test4Embeddings {
 
     public static void main(String[] args) {
         // 1. Modèle d'embeddings intégré (local, gratuit, entraîné surtout sur de l'anglais)
-        EmbeddingModel modeleIntegre = new BgeSmallEnV15EmbeddingModel();
-        System.out.println("===== Modèle intégré : BgeSmallEnV15 =====");
-        afficherSimilarites(modeleIntegre);
+        // Mis en commentaire pour le test 5 : sa dépendance est en commentaire dans pom.xml
+        // (conflit avec le modèle d'embeddings utilisé par easy-rag).
+        // EmbeddingModel modeleIntegre = new BgeSmallEnV15EmbeddingModel();
+        // System.out.println("===== Modèle intégré : BgeSmallEnV15 =====");
+        // afficherSimilarites(modeleIntegre);
 
         // 2. Modèle d'embeddings externe de Google
         EmbeddingModel modeleGoogle = GoogleGenAiEmbeddingModel.builder()
