@@ -45,6 +45,13 @@
             <version>1.22.0-beta32</version>
         </dependency>
 
+        <!-- Gson pour lire le JSON de l'API météo (test 7) -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.14.0</version>
+        </dependency>
+
         <!-- Logging : implémentation Logback pour SLF4J -->
         <dependency>
             <groupId>ch.qos.logback</groupId>

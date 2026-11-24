@@ -9,6 +9,7 @@ import dev.langchain4j.model.output.TokenUsage;
 /**
  * Test 2 : coût en tokens d'une requête.
  * Affiche la réponse, le nombre de tokens utilisés et le coût en dollars.
+ * Utilisé aussi au début du test 7 pour poser une question sur la météo sans outil.
  */
 public class Test2Couts {
 
@@ -25,8 +26,10 @@ public class Test2Couts {
                 .temperature(0.7)
                 .build();
 
-        // Même question que pour le test 1
-        String question = "Quelle est la capitale du Maroc ?";
+        // Test 2 : "Quelle est la capitale du Maroc ?"
+        // Test 7 (sans outil) : question sur le parapluie
+        String question = "Je dois partir dans 2 jours à Paris ; j'y resterai 3 jours. "
+                + "Est-ce que je dois mettre un parapluie dans mes valises ?";
 
         // chat(ChatMessage...) retourne un ChatResponse qui contient les nombres de tokens
         ChatResponse reponse = modele.chat(UserMessage.from(question));
