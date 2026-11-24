@@ -7,8 +7,11 @@
         </encoder>
     </appender>
 
-    <!-- Niveau INFO pour LangChain4j -->
-    <logger name="dev.langchain4j" level="INFO"/>
+    <!-- Niveau DEBUG pour LangChain4j : affiche les requêtes et réponses du LLM (test 7) -->
+    <logger name="dev.langchain4j" level="DEBUG"/>
+
+    <!-- Pour ne plus voir le long avertissement sur la gestion des erreurs des outils -->
+    <logger name="dev.langchain4j.service.ToolErrorHandlingNotice" level="OFF"/>
 
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>

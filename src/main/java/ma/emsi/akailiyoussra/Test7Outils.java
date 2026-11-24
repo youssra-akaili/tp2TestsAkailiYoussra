@@ -10,7 +10,8 @@ import java.util.Scanner;
 
 /**
  * Test 7 : utilisation d'outils.
- * Le LLM peut appeler l'outil MeteoTool pour connaître les prévisions de pluie.
+ * Le LLM peut appeler les outils de MeteoTool (géolocalisation et prévisions de pluie).
+ * Le logging des requêtes et réponses permet de voir les échanges JSON avec le LLM.
  */
 public class Test7Outils {
 
@@ -19,14 +20,16 @@ public class Test7Outils {
                 .apiKey(System.getenv("GEMINI_KEY"))
                 .modelName("gemini-3.5-flash")
                 .temperature(0.7)
+                .logRequests(true)   // Logging des requêtes envoyées au LLM
+                .logResponses(true)  // Logging des réponses du LLM
                 .build();
 
-        // Assistant qui peut utiliser l'outil météo s'il le souhaite
+        // Assistant qui peut utiliser les outils météo s'il le souhaite
         AssistantMeteo assistant =
                 AiServices.builder(AssistantMeteo.class)
                         .chatModel(modele)
                         .chatMemory(MessageWindowChatMemory.withMaxMessages(20)) // L'utilisation des outils génère des messages
-                        .tools(new MeteoTool())  // Ajout de l'outil
+                        .tools(new MeteoTool())  // Ajout des outils
                         .build();
 
         conversationAvec(assistant);
